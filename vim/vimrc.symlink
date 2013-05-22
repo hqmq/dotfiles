@@ -1,8 +1,12 @@
 syntax on
-colorscheme jellybeans
+"colorscheme jellybeans
 
 " Setup Pathogen
 execute pathogen#infect()
+call pathogen#helptags()
+
+" Setup leader key
+let mapleader=","
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
