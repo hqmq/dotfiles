@@ -1,6 +1,9 @@
 syntax on
 colorscheme jellybeans
 
+" Setup Pathogen
+execute pathogen#infect()
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 set ts=4 sts=2 sw=2 expandtab
