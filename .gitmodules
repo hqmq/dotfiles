@@ -7,3 +7,6 @@
 [submodule "vim/vim.symlink/bundle/ctrlp"]
 	path = vim/vim.symlink/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
+[submodule "vim/vim.symlink/bundle/github-colorscheme"]
+	path = vim/vim.symlink/bundle/github-colorscheme
+	url = git://github.com/endel/vim-github-colorscheme.git

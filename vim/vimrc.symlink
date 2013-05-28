@@ -1,9 +1,10 @@
 syntax on
-"colorscheme jellybeans
 
 " Setup Pathogen
 execute pathogen#infect()
 call pathogen#helptags()
+
+colorscheme github
 
 " Setup leader key
 let mapleader=","
@@ -40,5 +41,5 @@ map <D-9> 9gt
 map <D-0> :tablast<CR>
 
 " File defaults
-autocmd BufNew *.rb set list number
-autocmd BufNew *.php set list number
+autocmd BufNew *.rb set list number ruler
+autocmd BufNew *.php set list number ruler
