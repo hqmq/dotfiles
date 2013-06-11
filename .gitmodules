@@ -10,3 +10,6 @@
 [submodule "vim/vim.symlink/bundle/github-colorscheme"]
 	path = vim/vim.symlink/bundle/github-colorscheme
 	url = git://github.com/endel/vim-github-colorscheme.git
+[submodule "vim/vim.symlink/bundle/vim-coffee-script"]
+	path = vim/vim.symlink/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
