@@ -22,6 +22,9 @@ nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
+" map <Leader>r to run rspec on the current file
+nmap <Leader>r :! rspec %<CR>
+
 " swap between tabs and spaces
 map <C-TAB> :set ts=4 sts=4 sw=4 noet
 map <C-S-TAB> :set ts=4 sts=2 sw=2 et
