@@ -4,7 +4,7 @@ syntax on
 execute pathogen#infect()
 call pathogen#helptags()
 
-colorscheme railscasts
+colorscheme jellybeans
 
 " Setup leader key
 let mapleader=","
@@ -42,6 +42,10 @@ map <D-7> 7gt
 map <D-8> 8gt
 map <D-9> 9gt
 map <D-0> :tablast<CR>
+
+" Ctrl+P || Cmd+P Searching
+map <D-p> CtrlPMixed<CR>
+map <C-p> CtrlPMixed<CR>
 
 " File defaults
 autocmd BufNew *.rb set list number ruler
