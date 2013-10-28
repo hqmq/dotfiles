@@ -1,4 +1,5 @@
 syntax on
+set history=200
 
 " Setup Pathogen
 execute pathogen#infect()
@@ -24,6 +25,7 @@ vmap <D-]> >gv
 
 " map <Leader>r to run rspec on the current file
 nmap <Leader>r :! rspec %<CR>
+nmap <Leader>R :! rspec<CR>
 
 " swap between tabs and spaces
 map <C-TAB> :set ts=4 sts=4 sw=4 noet
@@ -32,16 +34,6 @@ map <C-S-TAB> :set ts=4 sts=2 sw=2 et
 " Tab navigation
 map <D-S-]> gt
 map <D-S-[> gT
-map <D-1> 1gt
-map <D-2> 2gt
-map <D-3> 3gt
-map <D-4> 4gt
-map <D-5> 5gt
-map <D-6> 6gt
-map <D-7> 7gt
-map <D-8> 8gt
-map <D-9> 9gt
-map <D-0> :tablast<CR>
 
 " Ctrl+P || Cmd+P Searching
 map <D-p> CtrlPMixed<CR>
