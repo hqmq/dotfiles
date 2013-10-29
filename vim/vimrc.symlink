@@ -17,15 +17,10 @@ set ts=4 sts=2 sw=2 expandtab
 " detect filetypes
 filetype on
 
-" textmate style identation
-nmap <D-[> <<
-nmap <D-]> >>
-vmap <D-[> <gv
-vmap <D-]> >gv
-
 " map <Leader>r to run rspec on the current file
 nmap <Leader>r :! rspec %<CR>
 nmap <Leader>R :! rspec<CR>
+nmap <Leader>m :! ruby -I test %<CR>
 
 " swap between tabs and spaces
 map <C-TAB> :set ts=4 sts=4 sw=4 noet
