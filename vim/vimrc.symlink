@@ -21,6 +21,7 @@ filetype on
 nmap <Leader>r :! rspec %<CR>
 nmap <Leader>R :! rspec<CR>
 nmap <Leader>m :! ruby -I test %<CR>
+nmap <Leader>M :! rake test<CR>
 
 " swap between tabs and spaces
 map <C-TAB> :set ts=4 sts=4 sw=4 noet
@@ -33,6 +34,9 @@ map <D-S-[> gT
 " Ctrl+P || Cmd+P Searching
 map <D-p> CtrlPMixed<CR>
 map <C-p> CtrlPMixed<CR>
+
+" Dash Integration
+:nmap <silent> <leader>d <Plug>DashSearch
 
 " File defaults
 autocmd BufNew *.rb set list number ruler
