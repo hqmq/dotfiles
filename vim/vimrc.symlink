@@ -5,6 +5,7 @@ set history=200
 execute pathogen#infect()
 call pathogen#helptags()
 
+set background=dark
 colorscheme jellybeans
 
 " Setup leader key
@@ -23,13 +24,16 @@ nmap <Leader>R :! rspec<CR>
 nmap <Leader>m :! ruby -I test %<CR>
 nmap <Leader>M :! rake test<CR>
 
+" Git Shortcuts
+nmap gc :Gcommit<CR>
+nmap gs :Gstatus<CR>
+nmap gb :Gblame<CR>
+nmap gm :Gmove<CR>
+nmap gg :Ggrep<CR>
+
 " swap between tabs and spaces
 map <C-TAB> :set ts=4 sts=4 sw=4 noet
 map <C-S-TAB> :set ts=4 sts=2 sw=2 et
-
-" Tab navigation
-map <Alt-]> gt
-map <Alt-[> gT
 
 " Ctrl+P || Cmd+P Searching
 map <C-p> CtrlPMixed<CR>
@@ -40,3 +44,6 @@ map <C-p> CtrlPMixed<CR>
 " File defaults
 autocmd BufNew *.rb set list number ruler
 autocmd BufNew *.php set list number ruler
+
+set laststatus=2
+set t_Co=256
