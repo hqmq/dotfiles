@@ -28,3 +28,7 @@
 [submodule "vim/vim.symlink/bundle/vim-airline"]
 	path = vim/vim.symlink/bundle/vim-airline
 	url = git@github.com:bling/vim-airline.git
+[submodule "vim/vim.symlink/bundle/vim-elixir"]
+	path = vim/vim.symlink/bundle/vim-elixir
+	url = git@github.com:elixir-lang/vim-elixir.git
+
