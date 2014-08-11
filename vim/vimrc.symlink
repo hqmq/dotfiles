@@ -19,8 +19,8 @@ set ts=4 sts=2 sw=2 expandtab
 filetype on
 
 " map <Leader>r to run rspec on the current file
-nmap <Leader>r :! turbo rspec %<CR>
-nmap <Leader>R :! turbo rspec<CR>
+nmap <Leader>r :! JRUBY_OPTS="--dev" rspec %<CR>
+nmap <Leader>R :! JRUBY_OPTS="--dev" rspec<CR>
 
 " Git Shortcuts
 nmap gc :Gcommit<CR>
