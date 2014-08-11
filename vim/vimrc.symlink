@@ -19,17 +19,13 @@ set ts=4 sts=2 sw=2 expandtab
 filetype on
 
 " map <Leader>r to run rspec on the current file
-nmap <Leader>r :! rspec %<CR>
-nmap <Leader>R :! rspec<CR>
-nmap <Leader>m :! ruby -I test %<CR>
-nmap <Leader>M :! rake test<CR>
+nmap <Leader>r :! turbo rspec %<CR>
+nmap <Leader>R :! turbo rspec<CR>
 
 " Git Shortcuts
 nmap gc :Gcommit<CR>
 nmap gs :Gstatus<CR>
-nmap gb :Gblame<CR>
 nmap gm :Gmove<CR>
-nmap gg :Ggrep<CR>
 
 " swap between tabs and spaces
 map <C-TAB> :set ts=4 sts=4 sw=4 noet
