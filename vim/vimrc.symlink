@@ -21,18 +21,17 @@ filetype on
 " map <Leader>f to :fold
 nmap <Leader>f :fold<CR>
 
-" map <Leader>r to run rspec on the current file
-nmap <Leader>r :! rspec %<CR>
-nmap <Leader>R :! rspec<CR>
-
 " Elixir shortcuts
 nmap <Leader>m :! mix test<CR>
 nmap mc :! mix compile<CR>
 
+" Ruby Rspec shortcuts
+nmap <Leader>r :! JRUBY_OPTS="--dev" rspec %<CR>
+nmap <Leader>R :! JRUBY_OPTS="--dev" rspec<CR>
+
 " Git Shortcuts
 nmap gc :Gcommit<CR>
 nmap gs :Gstatus<CR>
-nmap gb :Gblame<CR>
 nmap gm :Gmove<CR>
 
 " swap between tabs and spaces
