@@ -52,4 +52,4 @@ set laststatus=2
 set t_Co=256
 
 " Ignore files
-set wildignore+=*/log/*,*/tmp/*,*.so,*.swp,*.zip,*/_build/*,*/deps/*"
+set wildignore+=*/log/*,*/tmp/*,*.so,*.swp,*.zip,*/_build/*,*/deps/*,*/node_modules/*,*/bower_components/*"
