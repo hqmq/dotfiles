@@ -26,8 +26,9 @@ nmap <Leader>m :! mix test<CR>
 nmap mc :! mix compile<CR>
 
 " Ruby Rspec shortcuts
-nmap <Leader>r :! JRUBY_OPTS="--dev" rspec %<CR>
-nmap <Leader>R :! JRUBY_OPTS="--dev" rspec<CR>
+nmap <Leader>r :! clear && JRUBY_OPTS="--dev" bundle exec rspec %<CR>
+nmap <Leader>R :! clear && JRUBY_OPTS="--dev" bundle exec rspec<CR>
+nmap <Leader>k :! clear && JRUBY_OPTS="--dev" bundle exec rake<CR>
 
 " Git Shortcuts
 nmap gc :Gcommit<CR>
