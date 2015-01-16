@@ -22,13 +22,15 @@ filetype on
 nmap <Leader>f :fold<CR>
 
 " Elixir shortcuts
-nmap <Leader>m :! mix test<CR>
+nmap <Leader>m :! mix test %<CR>
+nmap <Leader>M :! mix test<CR>
 nmap mc :! mix compile<CR>
 
 " Ruby Rspec shortcuts
 nmap <Leader>r :! clear && JRUBY_OPTS="--2.0 --dev" bundle exec rspec %<CR>
 nmap <Leader>R :! clear && JRUBY_OPTS="--2.0 --dev" bundle exec rspec<CR>
 nmap <Leader>k :! clear && JRUBY_OPTS="--2.0 --dev" bundle exec rake<CR>
+"nmap <Leader>r :! clear; ruby %<CR>
 
 " Git Shortcuts
 nmap gc :Gcommit<CR>
@@ -53,4 +55,4 @@ set laststatus=2
 set t_Co=256
 
 " Ignore files
-set wildignore+=*/log/*,*/tmp/*,*.so,*.swp,*.zip,*/_build/*,*/deps/*,*/node_modules/*,*/bower_components/*"
+set wildignore+=*/log/*,*/tmp/*,*.so,*.swp,*.zip,*/_build/*,*/deps/*,*/node_modules/*,*/bower_components/*,*/build/*"
