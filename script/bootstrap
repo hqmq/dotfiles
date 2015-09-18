@@ -50,8 +50,17 @@ setup_homebrew_token () {
     read -e homebrew_api_token
     info "using $homebrew_api_token"
     sed -e "s/BREW_GITHUB_TOKEN/$homebrew_github_token/g" bash/bash_homebrew.symlink.example > bash/bash_homebrew.symlink
-p
   fi
+}
+
+setup_user_bindir () {
+  mkdir -p ~/bin
+  for source in `find $DOTFILES_ROOT/bin/*`
+  do
+    dest="$HOME/bin/`basename \"${source}\"`"
+    link_files $source $dest
+    echo ''
+  done
 }
 
 link_files () {
@@ -129,6 +138,7 @@ install_dotfiles () {
 setup_gitconfig
 setup_homebrew_token
 install_dotfiles
+setup_user_bindir
 
 echo ''
 echo '  All installed!'
