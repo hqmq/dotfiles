@@ -1,0 +1,57 @@
+export PATH=./node_modules/.bin:$PATH:~/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export HOMEBREW_GITHUB_API_TOKEN="752c5e7f40ac6bb2d47586fee96810f6aa59c8c2"
+
+# MX Stuff
+alias derp='PB_IGNORE_DEPRECATIONS=1'
+alias d='PB_IGNORE_DEPRECATIONS=1'
+alias jitless='JRUBY_OPTS="$JRUBY_OPTS -J-Djruby.compile.mode=OFF -J-Djruby.jit.enabled=false"'
+alias jit='JRUBY_OPTS="$JRUBY_OPTS -J-Djruby.compile.mode=JIT -J-Djruby.jit.enabled=true"'
+alias jp='JRUBY_OPTS="$JRUBY_OPTS --profile.api"'
+alias turbo='JRUBY_OPTS="$JRUBY_OPTS --dev"'
+alias super='JRUBY_OPTS="--2.0 --dev"'
+alias zmq='PB_CLIENT_TYPE=zmq PB_SERVER_TYPE=zmq'
+alias bi='bundle install'
+alias bins='bundle install --binstubs'
+alias bx='bundle exec'
+alias bu='bundle update'
+alias tbx='turbo bx'
+alias sbx='super bx'
+alias reload='source ~/.bash_profile'
+alias c='rvm current; git branch | grep "*"'
+alias l='ls -alh'
+alias update_bundler='rvm gemset use global && gem update --system && gem install bundler --no-doc && cd .'
+alias prod_merge='git checkout stable && git fetch origin --prune && git merge origin/stable && git merge origin/qa && cd . && bundle install'
+
+# Git Stuff
+alias gf='git fetch origin --prune'
+alias gm='git merge'
+alias gp='git pull'
+alias gc='git commit'
+alias gnb='git checkout -b'
+
+# RVM Stuff
+alias mri='rvm use 2.2.1@${PWD##*/} --create'
+alias jr='rvm use jruby-9.0.1.0@${PWD##*/} --create'
+
+# Optimization Stuff
+export NO_COV=1
+#export PB_IGNORE_DEPRECATIONS=1
+
+function title ()
+{
+    TITLE=$*;
+    export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
+}
+
+# Initialize boot2docker
+alias di='docker images'
+alias dc='docker ps -a'
+alias db='docker build'
+alias dr='docker run'
+alias ds='eval "$(boot2docker shellinit)"' #docker setup
+
+# Android SDK Stuff
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
+export NDK_ROOT=$ANDROID_NDK_HOME

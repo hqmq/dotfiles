@@ -25,6 +25,7 @@ nmap <Leader>f :fold<CR>
 nmap <Leader>m :! mix test %<CR>
 nmap <Leader>M :! mix test<CR>
 nmap mc :! mix compile<CR>
+nmap <Leader>e :! elixir %<CR>
 
 " Ruby Rspec shortcuts
 nmap <Leader>r :! clear && JRUBY_OPTS="--2.0 --dev" bundle exec rspec %<CR>
