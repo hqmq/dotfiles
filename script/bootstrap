@@ -43,10 +43,15 @@ setup_gitconfig () {
 }
 
 setup_homebrew_token () {
-  info 'setup homebrew API token'
-  user ' - What API token should homebrew use to ask github for information?'
-  read -e homebrew_api_token
-  sed -e "s/BREW_GITHUB_TOKEN/$homebrew_github_token/g" bash/bash_homebrew.symlink.example > bash/bash_homebrew.symlink
+  if ! [ -f bash/bash_homebrew.symlink ]
+  then
+    info 'setup homebrew API token'
+    user ' - What API token should homebrew use to ask github for information?'
+    read -e homebrew_api_token
+    info "using $homebrew_api_token"
+    sed -e "s/BREW_GITHUB_TOKEN/$homebrew_github_token/g" bash/bash_homebrew.symlink.example > bash/bash_homebrew.symlink
+p
+  fi
 }
 
 link_files () {
@@ -122,24 +127,8 @@ install_dotfiles () {
 }
 
 setup_gitconfig
+setup_homebrew_token
 install_dotfiles
-
-if [ -d $HOME/.vagrant.d ]
-then
-  ln -s $DOTFILES_ROOT/vagrant/Vagrantfile $HOME/.vagrant.d/Vagrantfile
-fi
-
-# If we are on a mac, lets install and setup homebrew
-if [ "$(uname -s)" == "Darwin" ]
-then
-  info "installing dependencies"
-  if . bin/dot > /tmp/dotfiles-dot 2>&1
-  then
-    success "dependencies installed"
-  else
-    fail "error installing dependencies"
-  fi
-fi
 
 echo ''
 echo '  All installed!'
