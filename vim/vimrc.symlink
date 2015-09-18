@@ -22,8 +22,8 @@ filetype on
 nmap <Leader>f :fold<CR>
 
 " Elixir shortcuts
-nmap <Leader>m :! mix test %<CR>
-nmap <Leader>M :! mix test<CR>
+nmap <Leader>m :! clear && mix test %<CR>
+nmap <Leader>M :! clear && mix test<CR>
 nmap mc :! mix compile<CR>
 nmap <Leader>e :! elixir %<CR>
 
@@ -51,6 +51,8 @@ map <C-p> CtrlPMixed<CR>
 " File defaults
 autocmd BufNew *.rb set list number ruler
 autocmd BufNew *.php set list number ruler
+autocmd BufNew *.ex set list number ruler
+autocmd BufNew *.exs set list number ruler
 
 set laststatus=2
 set t_Co=256
