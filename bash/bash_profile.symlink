@@ -1,6 +1,6 @@
 export PATH=./node_modules/.bin:$PATH:~/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export HOMEBREW_GITHUB_API_TOKEN="752c5e7f40ac6bb2d47586fee96810f6aa59c8c2"
+source ~/.bash_homebrew
 
 # MX Stuff
 alias derp='PB_IGNORE_DEPRECATIONS=1'

@@ -42,6 +42,13 @@ setup_gitconfig () {
   fi
 }
 
+setup_homebrew_token () {
+  info 'setup homebrew API token'
+  user ' - What API token should homebrew use to ask github for information?'
+  read -e homebrew_api_token
+  sed -e "s/BREW_GITHUB_TOKEN/$homebrew_github_token/g" bash/bash_homebrew.symlink.example > bash/bash_homebrew.symlink
+}
+
 link_files () {
   ln -s $1 $2
   success "linked $1 to $2"
