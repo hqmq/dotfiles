@@ -1,2 +1,6 @@
 # let me use my mouse to scroll
 set -g mode-mouse on
+
+# Short cuts
+bind B setw synchronize-panes on
+bind b setw synchronize-panes off

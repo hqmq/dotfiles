@@ -28,9 +28,9 @@ nmap mc :! mix compile<CR>
 nmap <Leader>e :! elixir %<CR>
 
 " Ruby Rspec shortcuts
-nmap <Leader>r :! clear && JRUBY_OPTS="--2.0 --dev" bundle exec rspec %<CR>
-nmap <Leader>R :! clear && JRUBY_OPTS="--2.0 --dev" bundle exec rspec<CR>
-nmap <Leader>k :! clear && JRUBY_OPTS="--2.0 --dev" bundle exec rake<CR>
+nmap <Leader>r :! clear && PB_IGNORE_DEPRECATIONS=1 JRUBY_OPTS="--dev" bundle exec rspec %<CR>
+nmap <Leader>R :! clear && PB_IGNORE_DEPRECATIONS=1 JRUBY_OPTS="--dev" bundle exec rspec<CR>
+nmap <Leader>k :! clear && PB_IGNORE_DEPRECATIONS=1 JRUBY_OPTS="--dev" bundle exec rake<CR>
 "nmap <Leader>r :! clear; ruby %<CR>
 
 " Git Shortcuts
@@ -58,4 +58,4 @@ set laststatus=2
 set t_Co=256
 
 " Ignore files
-set wildignore+=*/log/*,*/tmp/*,*.so,*.swp,*.zip,*/_build/*,*/deps/*,*/node_modules/*,*/bower_components/*,*/build/*"
+set wildignore+=*/log/*,./tmp/*,*.so,*.swp,*.zip,*/_build/*,*/deps/*,*/node_modules/*,*/bower_components/*,*/build/*,./node_modules"

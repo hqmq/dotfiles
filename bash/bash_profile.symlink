@@ -1,5 +1,6 @@
 export PATH=./node_modules/.bin:$PATH:~/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 source ~/.bash_homebrew
 
 # MX Stuff
@@ -21,7 +22,7 @@ alias reload='source ~/.bash_profile'
 alias c='rvm current; git branch | grep "*"'
 alias l='ls -alh'
 alias update_bundler='rvm gemset use global && gem update --system && gem install bundler --no-doc && cd .'
-alias prod_merge='git checkout stable && git fetch origin --prune && git merge origin/stable && git merge origin/qa && cd . && bundle install'
+alias prod_merge='git checkout stable && git fetch origin --prune && git merge origin/stable && git merge origin/qa && cd . && bundle install && git status'
 
 # Git Stuff
 alias gf='git fetch origin --prune'
@@ -31,8 +32,8 @@ alias gc='git commit'
 alias gnb='git checkout -b'
 
 # RVM Stuff
-alias mri='rvm use 2.2.1@${PWD##*/} --create'
-alias jr='rvm use jruby-9.0.1.0@${PWD##*/} --create'
+alias mri='rvm use 2.3.0@${PWD##*/} --create'
+alias jr='rvm use jruby-9.1.5.0@${PWD##*/} --create'
 
 # Optimization Stuff
 export NO_COV=1
@@ -44,12 +45,11 @@ function title ()
     export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
 }
 
-# Initialize boot2docker
+# Docker Aliases
 alias di='docker images'
-alias dc='docker ps -a'
-alias db='docker build'
-alias dr='docker run'
-alias ds='eval "$(boot2docker shellinit)"' #docker setup
+alias d='docker'
+alias dm='docker-machine'
+alias dc='docker-compose'
 
 # Android SDK Stuff
 export ANDROID_HOME=/usr/local/opt/android-sdk
