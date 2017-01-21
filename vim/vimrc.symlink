@@ -45,9 +45,6 @@ map <C-S-TAB> :set ts=4 sts=2 sw=2 et
 " Ctrl+P || Cmd+P Searching
 map <C-p> CtrlPMixed<CR>
 
-" Dash Integration
-:nmap <silent> <leader>d <Plug>DashSearch
-
 " File defaults
 autocmd BufNew *.rb set list number ruler
 autocmd BufNew *.php set list number ruler
