@@ -5,6 +5,9 @@ source ~/.bash_homebrew
 # enable iex history
 export ERL_AFLAGS="-kernel shell_history enabled"
 
+# Elixir Stuff
+alias ewt='fswatch - -o --exclude="**/*.swp*" --exclude "**/*~" --event Created --event Updated --event Removed ./lib ./test ./config | mix test --stale --listen-on-stdin'
+
 # MX Stuff
 alias derp='PB_IGNORE_DEPRECATIONS=1'
 alias d='PB_IGNORE_DEPRECATIONS=1'
