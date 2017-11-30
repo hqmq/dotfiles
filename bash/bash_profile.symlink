@@ -1,7 +1,9 @@
 export PATH=./node_modules/.bin:$PATH:~/bin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 source ~/.bash_homebrew
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# enable iex history
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 # MX Stuff
 alias derp='PB_IGNORE_DEPRECATIONS=1'
@@ -9,9 +11,9 @@ alias d='PB_IGNORE_DEPRECATIONS=1'
 alias jitless='JRUBY_OPTS="$JRUBY_OPTS -J-Djruby.compile.mode=OFF -J-Djruby.jit.enabled=false"'
 alias jit='JRUBY_OPTS="$JRUBY_OPTS -J-Djruby.compile.mode=JIT -J-Djruby.jit.enabled=true"'
 alias jp='JRUBY_OPTS="$JRUBY_OPTS --profile.api"'
-alias turbo='JRUBY_OPTS="$JRUBY_OPTS --dev"'
-alias super='JRUBY_OPTS="--2.0 --dev"'
+alias turbo='JRUBY_OPTS="$JRUBY_OPTS --dev --disable:did_you_mean"'
 alias zmq='PB_CLIENT_TYPE=zmq PB_SERVER_TYPE=zmq'
+alias nats='PB_CLIENT_TYPE="protobuf/nats/client" PB_SERVER_TYPE="protobuf/nats/runner"'
 alias bi='bundle install'
 alias bins='bundle install --binstubs'
 alias bx='bundle exec'
@@ -32,8 +34,8 @@ alias gc='git commit'
 alias gnb='git checkout -b'
 
 # RVM Stuff
-alias mri='rvm use 2.3.0@${PWD##*/} --create'
-alias jr='rvm use jruby-9.1.5.0@${PWD##*/} --create'
+alias mri='rvm use 2.4.0@${PWD##*/} --create'
+alias jr='rvm use jruby-9.1.12.0@${PWD##*/} --create'
 
 # Optimization Stuff
 export NO_COV=1

@@ -39,8 +39,8 @@ nmap gs :Gstatus<CR>
 nmap gm :Gmove<CR>
 
 " swap between tabs and spaces
-map <C-TAB> :set ts=4 sts=4 sw=4 noet
-map <C-S-TAB> :set ts=4 sts=2 sw=2 et
+map <A-TAB> :set ts=4 sts=4 sw=4 noet
+map <A-S-TAB> :set ts=4 sts=2 sw=2 et
 
 " Ctrl+P || Cmd+P Searching
 map <C-p> CtrlPMixed<CR>

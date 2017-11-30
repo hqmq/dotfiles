@@ -1,3 +1,8 @@
+# change the prefix binding
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+
 # let me use my mouse to scroll
 set -g mode-mouse on
 
