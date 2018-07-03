@@ -1,62 +1,45 @@
-export PATH=./node_modules/.bin:$PATH:~/bin
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
-source ~/.bash_homebrew
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-# enable iex history
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/hqmq/google-cloud-sdk/path.bash.inc' ]; then source '/Users/hqmq/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/hqmq/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/hqmq/google-cloud-sdk/completion.bash.inc'; fi
+
+export PS1="\h:\W\$ "
+
+# Enable History for Elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# Elixir Stuff
-alias ewt='fswatch - -o --exclude="**/*.swp*" --exclude "**/*~" --event Created --event Updated --event Removed ./lib ./test ./config | mix test --stale --listen-on-stdin'
+# Add Custom bin paths
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
-# MX Stuff
-alias derp='PB_IGNORE_DEPRECATIONS=1'
-alias d='PB_IGNORE_DEPRECATIONS=1'
-alias jitless='JRUBY_OPTS="$JRUBY_OPTS -J-Djruby.compile.mode=OFF -J-Djruby.jit.enabled=false"'
-alias jit='JRUBY_OPTS="$JRUBY_OPTS -J-Djruby.compile.mode=JIT -J-Djruby.jit.enabled=true"'
-alias jp='JRUBY_OPTS="$JRUBY_OPTS --profile.api"'
-alias turbo='JRUBY_OPTS="$JRUBY_OPTS --dev --disable:did_you_mean"'
-alias zmq='PB_CLIENT_TYPE=zmq PB_SERVER_TYPE=zmq'
-alias nats='PB_CLIENT_TYPE="protobuf/nats/client" PB_SERVER_TYPE="protobuf/nats/runner"'
-alias bi='bundle install'
-alias bins='bundle install --binstubs'
-alias bx='bundle exec'
-alias bu='bundle update'
-alias tbx='turbo bx'
-alias sbx='super bx'
-alias reload='source ~/.bash_profile'
-alias c='rvm current; git branch | grep "*"'
-alias l='ls -alh'
-alias update_bundler='rvm gemset use global && gem update --system && gem install bundler --no-doc && cd .'
-alias prod_merge='git checkout stable && git fetch origin --prune && git merge origin/stable && git merge origin/qa && cd . && bundle install && git status'
+# Add NPM bin paths
+export PATH=./node_modules/.bin:$PATH
 
-# Git Stuff
-alias gf='git fetch origin --prune'
-alias gm='git merge'
-alias gp='git pull'
-alias gc='git commit'
-alias gnb='git checkout -b'
-
-# RVM Stuff
-alias mri='rvm use 2.4.0@${PWD##*/} --create'
-alias jr='rvm use jruby-9.1.12.0@${PWD##*/} --create'
-
-# Optimization Stuff
-export NO_COV=1
-#export PB_IGNORE_DEPRECATIONS=1
-
-function title ()
+function loadrvm()
 {
-    TITLE=$*;
-    export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
+  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  source ~/.rvm/scripts/rvm
 }
+loadrvm
 
-# Docker Aliases
-alias di='docker images'
-alias d='docker'
-alias dm='docker-machine'
-alias dc='docker-compose'
+alias bi="bundle install"
+alias bx="bundle exec"
 
-# Android SDK Stuff
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
-export NDK_ROOT=$ANDROID_NDK_HOME
+alias c="rvm current && git branch | grep '*'"
+
+# Git Shortcuts
+alias gf="git fetch origin --prune"
+alias gnb="git checkout -b"
+alias gs="git status"
+alias gc="git commit"
+
+# Docker Shortcuts
+alias di="docker images"
+alias dp="docker ps -a"
+
+# Kubectl Shortcuts
+alias spiff="gcloud config configurations activate spiff && kubectl config use-context gke_argon-magnet-190822_us-west1-b_spiff-production"
+alias mmmrieslet="gcloud config configurations activate mmmrieslet && kubectl config use-context gke_mmmrieslet_us-central1-a_side-projects"
+
+# Load Homebrew Setup
+source ~/.bash_homebrew
