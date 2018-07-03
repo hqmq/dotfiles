@@ -1,5 +1,6 @@
 syntax on
 set history=200
+set autoread!
 
 " Setup Pathogen
 execute pathogen#infect()
@@ -26,11 +27,16 @@ nmap <Leader>m :! clear && mix test %<CR>
 nmap <Leader>M :! clear && mix test<CR>
 nmap mc :! mix compile<CR>
 nmap <Leader>e :! elixir %<CR>
+nmap <Leader>d :! mix dialyzer<CR>
+nmap <Leader>f :! mix format %<CR><CR>
+nmap <Leader>F :! mix format<CR><CR>
+nmap pc :! rm test/counter_examples<CR><CR>
 
 " Ruby Rspec shortcuts
-nmap <Leader>r :! clear && PB_IGNORE_DEPRECATIONS=1 JRUBY_OPTS="--dev" bundle exec rspec %<CR>
-nmap <Leader>R :! clear && PB_IGNORE_DEPRECATIONS=1 JRUBY_OPTS="--dev" bundle exec rspec<CR>
-nmap <Leader>k :! clear && PB_IGNORE_DEPRECATIONS=1 JRUBY_OPTS="--dev" bundle exec rake<CR>
+nmap <Leader>r :! clear && bundle exec rspec %<CR>
+nmap <Leader>R :! clear && bundle exec rspec<CR>
+nmap <Leader>K :! clear && bundle exec rake test<CR>
+nmap <Leader>k :! clear && ruby -I.:test %<CR>
 "nmap <Leader>r :! clear; ruby %<CR>
 
 " Git Shortcuts
@@ -55,4 +61,5 @@ set laststatus=2
 set t_Co=256
 
 " Ignore files
-set wildignore+=*/log/*,./tmp/*,*.so,*.swp,*.zip,*/_build/*,*/deps/*,*/node_modules/*,*/bower_components/*,*/build/*,./node_modules"
+set wildignore+=*/log/*,vendor/bundle/*,vendor/cache/*",./tmp/*,*.so,*.swp,*.zip,*/_build/*,*/deps/*,*/node_modules/*,*/bower_components/*,*/build/*,*/node_modules/*
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|log\|vendor/bundle\|vendor/cache\|bower_components\|_build\|deps\|tmp'
