@@ -4,6 +4,8 @@ if [ -f '/Users/hqmq/google-cloud-sdk/path.bash.inc' ]; then source '/Users/hqmq
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/hqmq/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/hqmq/google-cloud-sdk/completion.bash.inc'; fi
 
+if [ -f '/usr/local/opt/asdf/asdf.sh' ]; then source '/usr/local/opt/asdf/asdf.sh'; fi
+
 export PS1="\h:\W\$ "
 
 # Enable History for Elixir
