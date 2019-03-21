@@ -4,3 +4,6 @@
 *.swp
 *.rbc
 *.netrwhist
+.tool-versions
+.elixir_ls
+.vscode

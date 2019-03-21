@@ -4,7 +4,11 @@ if [ -f '/Users/hqmq/google-cloud-sdk/path.bash.inc' ]; then source '/Users/hqmq
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/hqmq/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/hqmq/google-cloud-sdk/completion.bash.inc'; fi
 
-if [ -f '/usr/local/opt/asdf/asdf.sh' ]; then source '/usr/local/opt/asdf/asdf.sh'; fi
+if [ -f '/usr/local/opt/asdf/asdf.sh' ]; then
+  source '/usr/local/opt/asdf/asdf.sh';
+  asdf global elixir 1.8.1-otp-21
+  asdf global erlang 21.2.4
+fi
 
 export PS1="\h:\W\$ "
 
@@ -45,3 +49,5 @@ alias mmmrieslet="gcloud config configurations activate mmmrieslet && kubectl co
 
 # Load Homebrew Setup
 source ~/.bash_homebrew
+
+export PATH="$HOME/.cargo/bin:$PATH"
